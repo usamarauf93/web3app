@@ -1,10 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from './components/Header.js';
+import Banner from './components/Banner/Banner.js';
+import Header from './components/Header/Header.js';
+import ScrollingList from './components/ScrollingList/ScrollingList.js';
+import Showcase from './components/ShowCase/ShowCase.js';
 function App() {
   return (
     <div className="App">
         <Header />
+        <Banner />
+        <ScrollingList />
+        <Showcase />
     </div>
   );
 }
