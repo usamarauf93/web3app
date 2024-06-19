@@ -1,4 +1,4 @@
-import React ,  { useState, useEffect } from 'react';
+import React ,  { useState, useEffect,useCallback } from 'react';
 import './Banner.css'; // Assuming you have a corresponding SCSS file for styling
 
 const Banner = () => {

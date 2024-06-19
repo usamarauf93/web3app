@@ -1,9 +1,11 @@
 // ShowcaseComponent.js
 
 import React, { useState, useEffect } from 'react';
+import './ShowCase.css'; 
 import data from '../../data.json'; // Assuming data.json is in the same directory
+import CountdownComponent from '../CountdownComponent';
 
-const Showcase = () => {
+const ShowCase = () => {
   const [projects, setProjects] = useState([]);
   const [filteredProjects, setFilteredProjects] = useState([]);
   const [sortBy, setSortBy] = useState('price'); // Default sort by price
@@ -46,7 +48,7 @@ const Showcase = () => {
             {filteredProjects.length > 0 ? (
               filteredProjects.map((project, index) => (
                 <div key={index} className="col-sm-4 mb-3 showcase-filter">
-                  <div className="col-sm-12 showcase_card shadow pt-3 px-4 pb-1">
+                  <div className="col-sm-12 showcase-card shadow pt-3 px-4 pb-1">
                     <div className="row">
                       <div
                         className="col-12 topbg-bar"
@@ -61,7 +63,7 @@ const Showcase = () => {
                     </div>
                     <div className="mt-4">
                       <h6 className="fw-bold m-0">{project.name} [ticker: {project.ticker}]</h6>
-                      <span className="mt-0">Created {project.created} ago</span>
+                      <span className="mt-0">Created {project.created} </span>
                     </div>
                     <p className="mt-2 mb-2">
                       Progress <span>({project.presaleprogress}%)</span>
@@ -73,13 +75,13 @@ const Showcase = () => {
                         <span>{project.cap} {project.chain}</span>
                       </div>
                     </p>
-                    <p className="pink mt-2 fw-8">Market cap: {project.marketcap}</p>
+                    <p className="pink mt-2 fw-8">Market cap: {project.market_cap}</p>
                     <hr className="mt-0" />
                     <div className="row mt-0 mb-0">
                       <div className="col-9">
                         <div className="grid">
                           <p className="mb-0">Sale Ends In</p>
-                          <p>{project.saleends}</p>
+                          <p><CountdownComponent initialTime={project.remaining_time} /></p>
                         </div>
                       </div>
                       <div className="col-3">
@@ -101,4 +103,4 @@ const Showcase = () => {
   );
 };
 
-export default Showcase;
+export default ShowCase;
