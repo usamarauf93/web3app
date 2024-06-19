@@ -61,3 +61,6 @@
     font-weight: normal!important;
     font-size: 1.3rem;
 }
+.card.banner-card{
+ text-align: left;
+}

@@ -1,0 +1,15 @@
+/* DarkModeToggle.css */
+.dark-mode-toggle {
+   
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+
+  .dark-mode {
+    /* Additional styles for dark mode */
+    background-color: #333;
+    color: #fff;
+  }
+  
