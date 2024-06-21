@@ -1,20 +1,34 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Banner from './components/Banner/Banner.js';
 import Footer from './components/Footer/Footer.js';
 import Header from './components/Header/Header.js';
 import ScrollingList from './components/ScrollingList/ScrollingList.js';
 import ShowCase from './components/ShowCase/ShowCase.js';
-import DarkModeToggle from './components/DarkModeToggle/DarkModeToggle.js';
+import CardDetails from './components/CardDetails/CardDetails.js';
+
 
 function App() {
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
         <Header />
-        <Banner />
-        <ScrollingList />
-        <ShowCase />
-        <Footer />
-    </div>
+         
+        <Routes>
+            <Route index element={
+                <>
+                  <Banner/>
+                  <ScrollingList/>
+                  <ShowCase/>
+                </>
+              } 
+            >
+            </Route>
+            <Route path="/details/:id" element={<CardDetails/>} />
+          </Routes>
+          <Footer />
+      </div>
+    </Router>
   );
 }
 

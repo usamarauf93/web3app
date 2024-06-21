@@ -1,49 +1,8 @@
-import React ,  { useState, useEffect,useCallback } from 'react';
+import React  from 'react';
 import './Banner.css'; // Assuming you have a corresponding SCSS file for styling
+import CountdownComponent from '../CountdownComponent';
 
 const Banner = () => {
-    const getRandomTime = () => {
-        // Generate random hours, minutes, and seconds between 0 and 59
-        const hours = Math.floor(Math.random() * 24);
-        const minutes = Math.floor(Math.random() * 60);
-        const seconds = Math.floor(Math.random() * 60);
-    
-        // Format time with leading zeros if needed
-        return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-      };
-    const [countdown, setCountdown] = useState(getRandomTime); // Initial countdown time
-
-    useEffect(() => {
-      const interval = setInterval(() => {
-        // Split countdown time into hours, minutes, seconds
-        let [hours, minutes, seconds] = countdown.split(':').map(Number);
-  
-        // Calculate total seconds
-        let totalSeconds = hours * 3600 + minutes * 60 + seconds;
-  
-        if (totalSeconds > 0) {
-          totalSeconds--;
-  
-          // Convert totalSeconds back to hours, minutes, seconds
-          hours = Math.floor(totalSeconds / 3600);
-          minutes = Math.floor((totalSeconds % 3600) / 60);
-          seconds = totalSeconds % 60;
-  
-          // Format time with leading zeros if needed
-          let formattedTime = `${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-          
-          // Update countdown state
-          setCountdown(formattedTime);
-        } else {
-          clearInterval(interval);
-          // Optionally, you can perform an action when countdown reaches zero
-          // For example: redirect user, display a message, etc.
-        }
-      }, 1000); // Update every second
-  
-      // Clear interval on component unmount
-      return () => clearInterval(interval);
-    }, [countdown]); // Run effect whenever countdown state changes
   
   return (
     <div className="banner col-10 offset-1">
@@ -87,7 +46,7 @@ const Banner = () => {
                   <div className="col-9">
                     <div className="grid">
                       <p className="mb-0">Sale Starts In</p>
-                      <p  id="countdown">{countdown}</p>
+                      <p><CountdownComponent initialTime="12:23:22" /></p>
                     </div>
                   </div>
                   <div className="col-3">
