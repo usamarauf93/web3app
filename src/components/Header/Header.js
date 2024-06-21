@@ -8,7 +8,7 @@ function Header() {
     <div className="first-header-part">
       <div className="logo">
         <a href="/">
-          <img src="logo.png" alt="Logo" />
+          <img src="../logo.png" alt="Logo" />
         </a>
       </div>
       <div className="search-bar">
