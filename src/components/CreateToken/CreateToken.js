@@ -1,5 +1,5 @@
 import './CreateToken.css';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 const CreateToken = () => {
   const [formData, setFormData] = useState({
@@ -15,6 +15,8 @@ const CreateToken = () => {
     discord: '',
   });
 
+  const fileInputRef = useRef(null);
+
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     setFormData({
@@ -29,6 +31,9 @@ const CreateToken = () => {
     console.log(formData);
   };
 
+  const handleFileUploadClick = () => {
+    fileInputRef.current.click();
+  };
   return (
     <div className="row p-5">
       <div className="col-sm-10 offset-1">
@@ -131,10 +136,11 @@ const CreateToken = () => {
               <div className="col-12 mt-3">
                 <div className="form-group">
                   <label>Image <span className="pink">*</span></label>
-                  <div role="presentation" className="cursor-pointer dropzone">
+                  <div role="presentation" className="cursor-pointer dropzone form-control"   onClick={handleFileUploadClick} >
                     <input
                       multiple
                       type="file"
+                      ref={fileInputRef}
                       style={{ display: 'none' }}
                       name="image"
                       onChange={handleChange}
