@@ -6,6 +6,7 @@ import Header from './components/Header/Header.js';
 import ScrollingList from './components/ScrollingList/ScrollingList.js';
 import ShowCase from './components/ShowCase/ShowCase.js';
 import CardDetails from './components/CardDetails/CardDetails.js';
+import CreateToken from './components/CreateToken/CreateToken.js';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             >
             </Route>
             <Route path="/details/:id" element={<CardDetails/>} />
+            <Route path="/createtoken" element={<CreateToken/>} />
           </Routes>
           <Footer />
       </div>
