@@ -7,9 +7,32 @@
   }
   
 
-  .dark-mode {
-    /* Additional styles for dark mode */
-    background-color: #333;
+.dark-mode {
+  /* Additional styles for dark mode */
+  background-color: #000;
+  color: #fff;
+}
+
+.dark-mode a, .btn-plain {
     color: #fff;
-  }
-  
+}
+.dark-mode .card.banner-card {
+  background-color: #000;
+  color: #fff;
+
+}
+.dark-mode .card.banner-card p{
+  color:#fff !important;
+}
+.dark-mode .text-dark{
+  color:#fff !important;
+}
+.dark-mode .viewtoken, .dark-mode .text-main-dark{
+  background-color: #000;
+  color: #fff !important;
+}
+.dark-mode .card{
+  background-color: #000;
+  color: #fff !important;
+  border:1px solid #fff ;
+}
