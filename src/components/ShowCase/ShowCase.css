@@ -54,6 +54,7 @@ border-radius: 2px;
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Distributes space evenly */
+    min-width: 300px;
 }
 
 .no-records{

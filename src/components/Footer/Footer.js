@@ -112,7 +112,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="bottom-part">
-        <p className="text-center">© 2024 by -----</p>
+        <p className="text-center">© 2024 by <a href="https://otvconsulting.com">On The Verge</a></p>
       </div>
     </div>
   );

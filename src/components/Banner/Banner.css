@@ -63,4 +63,5 @@
 }
 .card.banner-card{
  text-align: left;
+ min-width: 316px;
 }

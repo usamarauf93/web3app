@@ -44,10 +44,10 @@ const ShowCase = () => {
           {/* Omitted for brevity */}
 
           {/* Cards */}
-          <div className="row mt-4 col-11 offset-1 showcase-filter-box">
+          <div className="row mt-4 col-12 offset-1 showcase-filter-box">
             {filteredProjects.length > 0 ? (
               filteredProjects.map((project, index) => (
-                <div key={index} className="col-sm-4 mb-3 showcase-filter">
+                <div key={index} className="col-sm-4 col-md-4 mb-3 showcase-filter">
                   <div className="col-sm-12 showcase-card shadow pt-3 px-4 pb-1">
                     <div className="row">
                       <div
