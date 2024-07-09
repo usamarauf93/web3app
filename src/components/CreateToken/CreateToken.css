@@ -16,3 +16,11 @@
 .dropzone.active {
     border-color: #2196F3;
 }
+@media (max-width: 767px) {
+    .p-5 {
+        padding: 2rem !important;
+    }
+    .p-5 > .col-sm-10.offset-1{
+        margin-left:0;
+    }
+}
