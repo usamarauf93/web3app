@@ -268,7 +268,7 @@ const CardDetails = () => {
       </div>
       <div className="col-4">
         <div className="row">
-            <div className="col-12">
+            <div className="col-sm-12">
               <div className="card DetailsCard pt-3 px-4 pb-1">
                 <div className="row mb-0">
                   <div className="col-4 mb-0">
@@ -277,7 +277,7 @@ const CardDetails = () => {
                     </div>
                   </div>
                   <div className="col-8 mb-0">
-                    <h4>{project.name} [ticker: {project.ticker}]</h4>
+                    <h4 className="heading4">{project.name} [ticker: {project.ticker}]</h4>
                     <p className="text-muted text-m">{project.description}</p>
                   </div>
                 </div>
