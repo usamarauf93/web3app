@@ -9,6 +9,10 @@ header {
   margin-bottom: 1rem;
 }
 
+* {
+  /* border: 1px solid red; */
+}
+
 .logo img {
   width: 3.8rem;
   height: 3.8rem;
@@ -44,10 +48,10 @@ header {
   cursor: pointer;
   background: none;
   border: none;
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  z-index: 10;
+  /* position: absolute; */
+  /* top: 15px; */
+  /* right: 15px; */
+  /* z-index: 10; */
   display: none; /* Hide on larger screens */
 }
 
@@ -147,7 +151,12 @@ header {
   .hamburger-icon {
     display: block; /* Show hamburger icon on smaller screens */
   }
-
+  .header-side{
+    padding-right: 16% !important;  
+  }
+  .search-bar{
+    display: none;
+  }
   .nav {
     display: none; /* Hide menu by default on smaller screens */
   }

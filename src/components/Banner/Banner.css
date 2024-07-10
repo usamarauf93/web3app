@@ -66,3 +66,8 @@
  text-align: left;
  min-width: 316px;
 }
+@media (max-width: 767px) {
+   .banner{
+    margin-top:0px;
+   }
+}
