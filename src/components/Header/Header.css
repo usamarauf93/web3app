@@ -32,6 +32,10 @@ header {
   display: flex;
   justify-content: center;
 }
+button.btn.btn-main.disconnect{
+  background-color: #f95191c0;
+  color: #000;
+}
 
 .search-input {
   width: 80%;

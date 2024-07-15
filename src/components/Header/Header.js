@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Header.css';
 import DarkModeToggle from '../DarkModeToggle/DarkModeToggle.js';
+import WalletConnection from '../WalletConnection.js';
 
 function Header() {
 const [menuOpen, setMenuOpen] = useState(false);
@@ -38,6 +39,7 @@ return (
                 <DarkModeToggle />
             </li>
             <li className="header-btn">
+                {/* <WalletConnection></WalletConnection> */}
                 <button className="btn btn-main">Connect Wallet</button>
             </li>
         </ul>
