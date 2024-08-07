@@ -15,28 +15,33 @@ const WalletConnection = () => {
   };
 
   const connectWallet = async () => {
-    if (!provider) {
+    const p = getProvider();
+    if (!p) {
       alert('Phantom wallet is not installed. Please install it to connect your wallet.');
       window.open('https://phantom.app/', '_blank');
       return;
     }
 
     try {
-      const resp = await provider.request({ method: "connect", params: { onlyIfTrusted: true } });
+      const resp = await p.request({ method: 'connect' });
       setWalletAddress(resp.publicKey.toString());
       localStorage.setItem('walletAddress', resp.publicKey.toString());
       console.log('Connected with Public key:', resp.publicKey.toString());
     } catch (err) {
       if (err.code === 4001) {
-        console.log('User rejected the request.', err);
+        alert('User rejected the request.', err);
+      }else if(err.code == -32603){
+        alert('Please attach a account first in wallet');
       } else {
+        console.log(err.code);
         console.error('Error connecting wallet:', err);
       }
     }
   };
 
   const disconnectWallet = async () => {
-    if (!provider) {
+    const p = getProvider();
+    if (!p) {
       alert('Phantom wallet is not installed. Unable to disconnect.');
       return;
     }
@@ -45,7 +50,7 @@ const WalletConnection = () => {
 
     if (confirmed) {
       try {
-        await provider.request({ method: "disconnect" });
+        await p.request({ method: 'disconnect' });
         setWalletAddress(null);
         localStorage.removeItem('walletAddress');
         console.log('Wallet disconnected');
@@ -62,10 +67,11 @@ const WalletConnection = () => {
     setProvider(p);
 
     const storedWalletAddress = localStorage.getItem('walletAddress');
-
     if (storedWalletAddress) {
       setWalletAddress(storedWalletAddress);
-    } else if (p) {
+    }
+
+    if (p) {
       const handleConnect = (publicKey) => {
         setWalletAddress(publicKey.toString());
         localStorage.setItem('walletAddress', publicKey.toString());
@@ -76,15 +82,15 @@ const WalletConnection = () => {
         localStorage.removeItem('walletAddress');
       };
 
-      p.on("connect", handleConnect);
-      p.on("disconnect", handleDisconnect);
+      p.on('connect', handleConnect);
+      p.on('disconnect', handleDisconnect);
 
       return () => {
-        p.off("connect", handleConnect);
-        p.off("disconnect", handleDisconnect);
+        p.off('connect', handleConnect);
+        p.off('disconnect', handleDisconnect);
       };
     }
-  }, [provider]);
+  }, []);
 
   return (
     <div>
