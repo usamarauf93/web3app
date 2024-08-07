@@ -39,8 +39,8 @@ return (
                 <DarkModeToggle />
             </li>
             <li className="header-btn">
-                <WalletConnection></WalletConnection>
-                {/* <button className="btn btn-main">Connect Wallet</button> */}
+                {/* <WalletConnection></WalletConnection> */}
+                <button className="btn btn-main">Connect Wallet</button>
             </li>
         </ul>
     </div>

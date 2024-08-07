@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Connection, PublicKey, clusterApiUrl, Transaction, SystemProgram } from '@solana/web3.js';
+// import { Connection, PublicKey, clusterApiUrl, Transaction, SystemProgram } from '@solana/web3.js';
 
 const WalletConnection = () => {
   const [walletAddress, setWalletAddress] = useState(null);
